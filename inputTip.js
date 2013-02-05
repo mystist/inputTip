@@ -2,7 +2,7 @@
 /*
  * inputTip
  *
- * Last modified by Liber 2012-12-04
+ * Last modified by Liber 2013-02-05
  * 
  * https://github.com/Mystist/inputTip
  *
@@ -11,14 +11,12 @@
 
 	var downIndex = 0;
 	var upIndex = 9;
+	
+	var methods = {
+		
+		init : function(options) {
 
-    var methods = {
-
-        init : function(options) {
-
-
-            var defaults = {
-			
+			var defaults = {
 				codeName : "inputCode",
 				fullModel : true,
 				tipPosition : "bottom",  // top, bottom
@@ -54,20 +52,19 @@
 				},
 				dataSourceList : []
 			}
-            var settings = $.extend(defaults, options);
 			
+			var settings = $.extend(defaults, options);
 			var $this = this;
-			
 			doCode($this, settings);
 			
-        },
+		},
 		
 		destory : function() {
 		
 			this.empty();
 		}
 		
-    }
+	}
 	
 	var doCode = function($this, st) {
 	
@@ -275,15 +272,15 @@
 		
 	}
 
-    $.fn.inputTip = function(method) {
-        if(methods[method]) {
-            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-        } else if (typeof method === 'object' || !method) {
-            return methods.init.apply(this, arguments);
-        } else {
-            $.error( 'No '+method+' .' );
-        }
-    }
+	$.fn.inputTip = function(method) {
+		if(methods[method]) {
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		} else if (typeof method === 'object' || !method) {
+			return methods.init.apply(this, arguments);
+		} else {
+			$.error( 'No '+method+' .' );
+		}
+	}
 
 })(jQuery);
 
