@@ -21,11 +21,13 @@
 				fullModel : true,
 				tipPosition : "bottom",  // top, bottom
 				fixDisplay : false,
+				inputAttrName : "inputTipInput",
+				inputOtherAttrString : "",
 				colModel : [
 					{
 						displayName : "名称",
 						name : "itemName",
-						colStyle : "color: black;font: 14px arial;height: 25px;line-height: 25px;padding: 0 8px; "
+						colStyle : ""
 					}
 				],
 				tipHasShown : function() {
@@ -38,15 +40,14 @@
 					
 						if($(this).css("display")!="none") {
 						
-							$this.find("input[name='inputTipInput']").val(this.innerText);
-							$this.find("input[name='inputRealValue']").val(this.innerText);									
+							$this.find("input").val(this.innerText);
 							return false;
 						}
 					});
 
 					$this.find("div.tipDiv").remove();
 					$this.css("position", "static")
-						.find("input[name='inputTipInput']")
+						.find("input")
 						.css("position", "static");
 						
 				},
@@ -72,14 +73,14 @@
 		
 		var initHTML = function($this) {
 		
-			$this.append('<input name="inputTipInput" style="width:96%;height: 16px;line-height: 16px;" /><input name="inputRealValue" style="display:none;" />');
+			$this.append('<input '+st.inputOtherAttrString+' name="'+st.inputAttrName+'" style="width:96%;height: 16px;line-height: 16px;" />');
 			
 			trDelegate($this, st);
 		}
 		
 		var initListener = function($this, st) {
 		
-			$this.find("input[name='inputTipInput']").bind("keydown", function(e) {
+			$this.find("input[name='"+st.inputAttrName+"']").bind("keydown", function(e) {
 				if(e.keyCode==38) {
 					e.cancelable = true;
 					e.preventDefault();
@@ -87,7 +88,7 @@
 			});
 			
 			var dataSourceList = st.dataSourceList;
-			$this.find("input[name='inputTipInput']").bind("keyup", function(e) {
+			$this.find("input[name='"+st.inputAttrName+"']").bind("keyup", function(e) {
 
 				if(e.keyCode==40) {
 					
@@ -130,7 +131,7 @@
 
 						if($(this).css("background-color")=="#eee"||$(this).css("background-color")=="rgb(238, 238, 238)") {
 
-							$(this).click();							
+							$(this).click();
 							return false;
 						}
 					});
@@ -195,7 +196,7 @@
 		var thStr = '';
 		for(var i=0,len=st.colModel.length; i<len; i++) {
 		
-			thStr += '<th style="'+st.colModel[i].colStyle+' font-weight:bold; ">'+st.colModel[i].displayName+'</th>';
+			thStr += '<th style=" color: black;font: 14px arial;height: 25px;line-height: 25px;padding: 0 8px; font-weight:bold; '+st.colModel[i].colStyle+' ">'+st.colModel[i].displayName+'</th>';
 		}
 		
 		var headStr = '<thead><tr>'+thStr+'</tr></thead>';
@@ -207,7 +208,7 @@
 			var tdStr = '';
 			for(var j=0,jlen=st.colModel.length; j<jlen; j++) {
 			
-				tdStr += '<td style=" '+st.colModel[j].colStyle+' ">'+(o[st.colModel[j].name]==undefined?"":o[st.colModel[j].name])+'</td>';
+				tdStr += '<td style=" color: black;font: 14px arial;height: 25px;line-height: 25px;padding: 0 8px; '+st.colModel[j].colStyle+' ">'+(o[st.colModel[j].name]==undefined?"":o[st.colModel[j].name])+'</td>';
 			}
 			
 			str += '<tr style="background-color: white;">'+tdStr+'</tr>';
