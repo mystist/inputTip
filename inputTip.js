@@ -2,7 +2,7 @@
 /*
  * inputTip
  *
- * Last modified by Liber 2013-02-05
+ * Contact Liber For More Infomation: gjl87910lq@hotmail.com
  * 
  * https://github.com/Mystist/inputTip
  *
