@@ -19,7 +19,7 @@ Support keyWordsContain mode.
 Add a index column.  
 
 ## 2013-02-05  
-Add demo.
+Add demo.  
 Support multi instances in one page.
 
 ## 2012-12-05  
