@@ -11,21 +11,18 @@ Contact me for more information:
 
 # Change Log
 
-2013-03-08
+## 2013-03-08  
+Support display huge datas by using sroll bar, the data will be loading dynamic when srolling to the bottom.  
+Fix clicked callback function and tipHasShown callback function.  
+More options can be set.  
+Support keyWordsContain mode.  
+Add a index column.  
 
-Support display huge datas by using sroll bar, the data will be loading dynamic when srolling to the bottom.
-Fix clicked callback function and tipHasShown callback function.
-More options can be set.
-Support keyWordsContain mode.
-Add a index column.
-
-2013-02-05
-
+## 2013-02-05  
 Add demo.
 Support multi instances in one page.
 
-2012-12-05
-
+## 2012-12-05  
 Pushed to github.
 
 
