@@ -16,7 +16,8 @@ Contact me for more information:
 Support display huge datas by using sroll bar, the data will be loading dynamic when srolling to the bottom.
 Fix clicked callback function and tipHasShown callback function.
 More options can be set.
-Support containKeyWords mode.
+Support keyWordsContain mode.
+Add a index column.
 
 2013-02-05
 

@@ -32,8 +32,10 @@
 		
 			codeName : "inputCode",
 			dataSourceList : objList,
-			fullModel : true,
+			fullMode : true,
+			keyWordsContainMode : true,
 			tipPosition : "bottom",
+			headStyle : 'bgcolor="#599ed9" style="color:#ffffff;"',
 			colModel : [
 				{
 					displayName : "项目代码",
@@ -41,8 +43,14 @@
 					colStyle : "display:none; "
 				},
 				{
+					displayName : "序号",
+					isIndex : true,
+					colStyle : "width:40px;"
+				},
+				{
 					displayName : "名称",
 					name : "itemName",
+					isValue : true,
 					colStyle : "width:150px; "
 				},
 				{
