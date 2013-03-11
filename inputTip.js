@@ -313,7 +313,7 @@
 		});
 		
 		$this.delegate("tbody tr", "click", function(e) {
-			$this.find("input").val($(this).find("td[isvalue]")[0].innerText);
+			$this.find("input").val($(this).find("td[isvalue]").first().text());
 			$this.find("div.tipDiv").remove();
 			$this.css("position", "static")
 				.find("input")
