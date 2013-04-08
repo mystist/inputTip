@@ -1,12 +1,11 @@
 ﻿
 /*
  * inputTip
- *
- * Contact Liber For More Infomation: gjl87910lq@hotmail.com
  * 
  * https://github.com/Mystist/inputTip
  *
  */
+ 
 (function($){
 
 	var downIndex;
