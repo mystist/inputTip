@@ -29,6 +29,7 @@
 				keyWordsContainMode : false,
 				headStyle : "",
 				inputStyle : "width:96%;height: 16px;line-height: 16px;",
+				scrollTarget : ".tipDiv",
 				colModel : [{
 						displayName : "名称",
 						name : "itemName",
@@ -40,6 +41,9 @@
 				},
 				clicked : function() {
 					//callBack after item has clicked.
+				},
+				tipIsShowing : function() {
+					//callBack after tip is now showing.
 				},
 				dataSourceList : []
 			}
@@ -175,9 +179,11 @@
 							setTipStyle($this, st);
 						}
 						
-						$("div.tipDiv").scroll(function() {
+						st.tipIsShowing();
+						
+						$this.find(st.scrollTarget).scroll(function() {
 							
-							if( $(this).scrollTop()+100 >=$this.find("table").height()-$(this).height() ) {
+							if( $(this).scrollTop()+100 >=$this.find("table:last").height()-$(this).height() ) {
 								toDoItemList = [];
 								for(var i=0; i< st.maxItemNumber; i++){
 									if(filteredItemList[0]) {
@@ -186,7 +192,7 @@
 									}
 								}
 								if(toDoItemList.length>0) {
-									$this.find(".tipDiv table tbody").append(getDomByList($this, toDoItemList, st));
+									$this.find(".tipDiv table:last tbody").append(getDomByList($this, toDoItemList, st));
 								}
 							}
 							
@@ -265,16 +271,10 @@
 	}
 	
 	function setTipStyle($this, st) {
-	
-		var tableWidth = 0;
-		
-		$this.find("thead tr th").each(function() {
-			tableWidth += parseInt($(this).css("width"));
-		});
 		
 		if(st.fixDisplay) {
 			$this.find("table").css({
-				"width" : tableWidth,
+				"width" : "100%",
 				"table-layout" : "fixed"
 			});
 		}
