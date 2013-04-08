@@ -3,6 +3,10 @@
  * 
  * https://github.com/Mystist/inputTip
  *
+ * Copyright (c) 2013 Foundation and other contributors
+ *
+ * License: https://github.com/Mystist/inputTip/blob/master/MIT-LICENSE.txt
+ *
  */
  
 (function($){
