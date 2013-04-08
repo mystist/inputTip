@@ -1,5 +1,4 @@
-﻿
-/*
+﻿/*
  * inputTip
  * 
  * https://github.com/Mystist/inputTip
