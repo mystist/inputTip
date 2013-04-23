@@ -11,6 +11,9 @@ Contact me for more information:
 
 # Change Log
 
+## 2013-04-23
+Set `top: -270px` to the `tipDiv` when it's first initialized.
+
 ## 2013-04-08
 Add callback function: `tipIsShowing`.  
 Add option `scrollTarget` for some complex situation.

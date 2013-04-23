@@ -229,7 +229,7 @@
 		
 		str = getDomByList($this, list, st);
 		
-		var sb = '<div class="tipDiv" style="position: absolute;  border: 1px solid #817F82; max-height: 270px; overflow-x: hidden; overflow-y: auto; " >'
+		var sb = '<div class="tipDiv" style="position: absolute; top: -270px; left: 0;  border: 1px solid #817F82; max-height: 270px; overflow-x: hidden; overflow-y: auto; " >'
 			+ '<table cellspacing="0" cellpadding="2" style="background-color: white;cursor: default; ">'
 			+ (st.fullMode==true?headStr:"")
 			+ '<tbody>'
