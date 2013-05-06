@@ -39,13 +39,13 @@
 						colStyle : ""
 				}],
 				tipHasShown : function() {
-					//callBack after tip has shown.
+					//callback after tip has shown.
 				},
 				clicked : function() {
-					//callBack after item has clicked.
+					//callback after item has clicked.
 				},
 				tipIsShowing : function() {
-					//callBack after tip is now showing.
+					//callback after tip is now showing.
 				},
 				dataSourceList : []
 			}
