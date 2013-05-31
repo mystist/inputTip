@@ -38,14 +38,17 @@
 						isValue : true,
 						colStyle : ""
 				}],
+				blurhidden : false,
+				clickselect: false,
+				eschidden: false,
 				tipHasShown : function() {
-					//callback after tip has shown.
+					//callback after tip has shown.2
 				},
 				clicked : function() {
-					//callback after item has clicked.
+					//callback after item has clicked.3
 				},
 				tipIsShowing : function() {
-					//callback after tip is now showing.
+					//callback after tip is now showing.1
 				},
 				dataSourceList : []
 			}
@@ -76,14 +79,13 @@
 		}
 		
 		var initListener = function($this, st) {
-		
 			$this.find("input[name='"+st.inputAttrName+"']").bind("keydown", function(e) {
 				if(e.keyCode==38) {
 					e.cancelable = true;
 					e.preventDefault();
 				}
 			});
-			
+				
 			var dataSourceList = st.dataSourceList;
 			$this.find("input[name='"+st.inputAttrName+"']").bind("keyup", function(e) {
 
@@ -137,8 +139,12 @@
 						}
 					});
 					
-				} else {
-				
+				}else if(e.keyCode == 27){
+					if(st.eschidden == true){
+						$this.find("div.tipDiv").remove();	
+					}
+				}
+				else {
 					downIndex = 0;
 					upIndex = st.maxItemNumber-1;
 					
@@ -205,8 +211,31 @@
 				}
 				
 			});
+			
+			$this.find("input[name='"+st.inputAttrName+"']").bind("blur", function(e) {
+				if(st.blurhidden == true)
+				{
+					$this.find("tbody tr").each(function() {
 
+						if($(this).css("background-color")=="#d7e8f0"||$(this).css("background-color")=="rgb(215, 232, 240)") {
+
+							$(this).click();
+							return false;
+						}
+					});
+				   	$this.find("div.tipDiv").remove();	
+				}
+			});
+			
+			$this.find("input[name='"+st.inputAttrName+"']").bind("click", function(e) {
+				if(st.clickselect == true)
+				{
+					$(e.currentTarget).select();	
+				}
+			});
 		}
+		
+		
 		
 		initHTML($this);
 		initListener($this, st);
@@ -229,7 +258,7 @@
 		
 		str = getDomByList($this, list, st);
 		
-		var sb = '<div class="tipDiv" style="position: absolute; top: -270px; left: 0;  border: 1px solid #817F82; max-height: 270px; overflow-x: hidden; overflow-y: auto; " >'
+		var sb = '<div class="tipDiv" style="position: absolute; z-index:10 ;  top: -270px; left: 0;  border: 1px solid #817F82; max-height: 270px; overflow-x: hidden; overflow-y: auto; " >'
 			+ '<table cellspacing="0" cellpadding="2" style="background-color: white;cursor: default; ">'
 			+ (st.fullMode==true?headStr:"")
 			+ '<tbody>'
@@ -336,4 +365,3 @@
 	}
 
 })(jQuery);
-
