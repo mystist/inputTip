@@ -15,7 +15,7 @@ Contact me for more information:
 Add options: `blurHidden`, `clickSelect` and `escHidden`.  
 Rewrite the structure of inputTip.
 Add event: `option` which use to get/set the options, just like jQueryUI used.  
-Add event: `refresh` to refresh your tip and you set some options.  
+Add event: `refresh` to refresh your tip after you set some options.  
 So, If your dataSourceList is yet to initialized, the tip will show out the loading msg, which can get a better UE.  
 
 Just like:  
