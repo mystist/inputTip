@@ -11,6 +11,21 @@ Contact me for more information:
 
 ## Change Log
 
+### 2013-06-03
+Add options: `blurHidden`, `clickSelect` and `escHidden`.  
+Rewrite the structure of inputTip.
+Add event: `option` which use to get/set the options, just like jQueryUI used.  
+Add event: `refresh` to refresh your tip and you set some options.  
+So, If your dataSourceList is yet to initialized, the tip will show out the loading msg, which can get a better UE.  
+
+Just like:  
+{% highlight javascript %}
+  //... 
+  //theList get it's value.
+  $("#m_inputTip").inputTip("option", "dataSourceList", theList);
+  $("#m_inputTip").inputTip("refresh");
+{% endhighlight %}
+
 ### 2013-04-23
 Set `top: -270px` to the `tipDiv` when it's first initialized.
 
