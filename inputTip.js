@@ -371,15 +371,11 @@
       }, 200);
     });
     $this.delegate("div.tipDiv", "blur", function() {
-      $this.find("tbody tr").each(function() {
-        if($(this).css("background-color")=="#d7e8f0"||$(this).css("background-color")=="rgb(215, 232, 240)") {
-          $(this).click();
-          return false;
+      setTimeout(function() {
+        if($this.find("div.tipDiv").length>0) {
+          $this.find("div.tipDiv").remove();
         }
-      });
-      if($this.find("div.tipDiv").length>0) {
-        $this.find("div.tipDiv").remove();
-      }
+      }, 200);
     });
   }
   
