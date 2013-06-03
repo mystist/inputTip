@@ -19,12 +19,11 @@ Add event: `refresh` to refresh your tip and you set some options.
 So, If your dataSourceList is yet to initialized, the tip will show out the loading msg, which can get a better UE.  
 
 Just like:  
-{% highlight javascript %}
-  //... 
-  //theList get it's value.
-  $("#m_inputTip").inputTip("option", "dataSourceList", theList);
-  $("#m_inputTip").inputTip("refresh");
-{% endhighlight %}
+    //... 
+    //theList get it's value.  
+    $("#m_inputTip").inputTip("option", "dataSourceList", theList);  
+    $("#m_inputTip").inputTip("refresh");  
+
 
 ### 2013-04-23
 Set `top: -270px` to the `tipDiv` when it's first initialized.
