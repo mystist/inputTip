@@ -387,7 +387,7 @@
       }
       if(st.showTipOnClick) {
         var $target = $this.find("input[name='"+st.inputAttrName+"']");
-        if($target.val()=="") {
+        if($.trim($target.val())=="") {
           $this.find("input[name='"+st.inputAttrName+"']").val(" ");
           keyCodeDefault($this, st);
         }
