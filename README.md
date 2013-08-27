@@ -11,6 +11,9 @@ Contact me for more information:
 
 ## Change Log
 
+### 2013-08-27
+Add option: `showTipOnClick`.
+
 ### 2013-06-03
 Add options: `blurHidden`, `clickSelect` and `escHidden`.  
 Rewrite the structure of inputTip.

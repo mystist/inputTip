@@ -45,6 +45,7 @@
         blurHidden: false,
         clickSelect: false,
         escHidden: false,
+        showTipOnClick: false
       }
       var settings = $.extend(defaults, options);
       
@@ -106,9 +107,7 @@
       bindBlurHidden($this, st);
     }
     
-    if(st.clickSelect) {
-      bindClickSelect($this, st);
-    }
+    bindInputEvents($this, st);
     
     $this.find("input[name='"+st.inputAttrName+"']").bind("keyup", function(e) {
       switch(e.keyCode) {
@@ -379,9 +378,20 @@
     });
   }
   
-  var bindClickSelect = function($this, st) {
+  
+  var bindInputEvents = function($this, st) {
+  
     $this.find("input[name='"+st.inputAttrName+"']").bind("click", function(e) {
-      $(e.currentTarget).select();
+      if(st.clickSelect) {
+        $(e.currentTarget).select();
+      }
+      if(st.showTipOnClick) {
+        var $target = $this.find("input[name='"+st.inputAttrName+"']");
+        if($target.val()=="") {
+          $this.find("input[name='"+st.inputAttrName+"']").val(" ");
+          keyCodeDefault($this, st);
+        }
+      }
     });
   }
   
